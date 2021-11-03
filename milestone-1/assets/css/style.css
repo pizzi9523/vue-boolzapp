@@ -76,11 +76,13 @@ body{
 /**********
 *aside
 ***********/
+
+/*notification*/
 .notification{
     background-color: #8EDAFC;
     padding: 20px 10px; 
-    justify-content: space-around;
-
+    justify-content: center;
+    gap: 0.5rem;
 }
 
 .notification_text div{
@@ -91,6 +93,34 @@ body{
 .notification_text a{
     font-size: 0.8rem;
     color: grey;
+}
+
+/*search_contact*/
+.search_contact{
+    padding: 10px;
+    background-color: #FAFAFA;
+}
+.search_contact input{
+    border: none;
+    width: 100%;
+
+}
+
+.search_contact input:focus-visible{
+    outline: none;
+}
+
+.search_contact input::placeholder{
+    font-size: 15px;
+}
+
+.search{
+    background-color: white;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    line-height: 30px;
+    color: #B1B1B1;
 }
 
 
