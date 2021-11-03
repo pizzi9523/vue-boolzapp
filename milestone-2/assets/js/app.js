@@ -1,6 +1,8 @@
 const app = new Vue({
     el: "#root",
+
     data: {
+        pointer: 1,
         contacts: [
             {
                 name: 'Michele',
@@ -87,5 +89,11 @@ const app = new Vue({
             },
         ]
 
+    },
+
+    methods: {
+        showChat(index) {
+            this.pointer = index;
+        }
     }
 })

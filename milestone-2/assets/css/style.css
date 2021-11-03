@@ -53,19 +53,7 @@ body{
 /**************
 *Debug
 ***************/
-.debug .side_window{
-    height: 400px;
-    background-color: gainsboro;
-}
 
-.debug .main_window{
-    height: 400px;
-}
-
-.debug .content{
-    height: 500px;
-    background-color: gray;
-}
 
 /*********
 *main
@@ -157,6 +145,11 @@ body{
 
 .contact{
     border-bottom: 1px solid #FAFAFA;
+    cursor: pointer;
+}
+
+.contact:hover{
+    background-color: #B1B1B1;
 }
 
 /*main_window*/
@@ -188,6 +181,12 @@ body{
     background-color: white;
     padding: 10px;
     margin-left: 40px;
+}
+
+.data_message{
+    font-size: 10px;
+    color: #B1B1B1;
+    text-align: end;
 }
 
 /*main_footer*/

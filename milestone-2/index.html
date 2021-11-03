@@ -62,7 +62,7 @@
                     </div>
                     <!-- /.search_contact -->
                     <div class="contacts">
-                        <div class="contact p-3 " v-for="contact in contacts">
+                        <div class="contact p-3 " v-for="(contact, index) in contacts" @click="showChat(index)">
 
                             <div class="avatar">
                                 <div class="avatar_img me-4">
@@ -85,11 +85,11 @@
                     <div class="main_header">
                         <div class="avatar">
                             <div class="avatar_img">
-                                <img src="./assets/img/avatar_1.jpg" alt="">
+                                <img :src="'./assets/img/avatar' + contacts[pointer].avatar + '.jpg'" alt="">
                             </div>
 
                             <div class="avatar_info">
-                                <div class="avatar_name">Michele</div>
+                                <div class="avatar_name">{{contacts[pointer].name}}</div>
                                 <div class="avatar_log">Ultimo accesso oggi alle</div>
                             </div>
 
@@ -103,16 +103,21 @@
                             <i class="fas fa-ellipsis-v "></i>
                         </div>
                     </div>
+                    <!-- /.main_header  -->
 
                     <div class="chat">
-                        <div class="message ">
-                            <div class="message_sent">Hello World</div>
-                        </div>
-                        <div class="message ">
-                            <div class="message_received">Hello World</div>
+                        <div>
+                            <div class="message" v-for="message in contacts[pointer].messages">
+                                <div :class="'message_' + message.status">
+                                    {{message.text}}
+                                    <div class="data_message">{{message.date}}</div>
+                                </div>
+                            </div>
                         </div>
 
+
                     </div>
+                    <!-- /.chat  -->
 
                     <div class="main_footer">
                         <div class="emoticon flex--grow-0">
