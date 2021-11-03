@@ -5,6 +5,16 @@ body{
     background-color: #DBDBD2;
 }
 
+.bell_icon{
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    color: #8EDAFC;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+}
+
 /***********
 *background
 ************/
@@ -62,5 +72,24 @@ body{
     margin: 0 5px;
     color: #B1B1B1;
 }
+
+/**********
+*aside
+***********/
+.notification{
+    background-color: #8EDAFC;
+    padding: 10px;
+    justify-content: space-around;
+}
+
+.notification_text div{
+    font-size: 1rem;
+}
+
+.notification_text a{
+    font-size: 0.8rem;
+    color: grey;
+}
+
 
 
