@@ -2,6 +2,7 @@ const app = new Vue({
     el: "#root",
 
     data: {
+
         pointer: 0,
         messageText: "",
         newMessage: {
@@ -14,6 +15,7 @@ const app = new Vue({
             text: '',
             status: 'received'
         },
+        searchInput: "",
         contacts: [
             {
                 name: 'Michele',
@@ -123,6 +125,11 @@ const app = new Vue({
 
                 app.contacts[app.pointer].messages.push(app.newMessageReceived)
             }, 1000)
+        },
+
+        searchContact() {
+
         }
-    }
+    },
+
 })
