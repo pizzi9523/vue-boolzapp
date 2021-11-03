@@ -201,15 +201,47 @@ body{
     top: 0;
     right: 10px;
     display: none;
+    color: #808080;
 }
 
 .message_menu{
+    display: none;
+}
+
+.message_menu .left{
     position: absolute;
-    top: 50%;
     background-color: white;
-    width: 250px;
+    width: 180px;
     z-index: 1;
-    display:  none;
+    text-align: center;
+    top: 17px;
+    left: 100px;
+}
+
+.message_menu .right{
+    position: absolute;
+    background-color: white;
+    width: 180px;
+    z-index: 1;
+    text-align: center;
+    top: 16px;
+    right: 15px;
+}
+
+
+
+.message_menu .right div:hover,
+.message_menu .left div:hover{
+    background-color: #B1B1B1;
+    cursor: pointer;
+}
+
+.message_menu.active{
+    display: block;
+}
+.delete_message,
+.info_message{
+    padding: 10px;
 }
 
 /*main_footer*/

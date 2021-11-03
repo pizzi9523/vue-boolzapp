@@ -2,7 +2,9 @@ const app = new Vue({
     el: "#root",
 
     data: {
-
+        menuClicked: "",
+        clicked: "false",
+        activeClass: "",
         pointer: 0,
         messageText: "",
         newMessage: {
@@ -128,6 +130,19 @@ const app = new Vue({
         },
 
         searchContact() {
+            //console.log(this.searchInput);
+        },
+
+        showMenu(index) {
+            if (!this.clicked) {
+                this.activeClass = "active"
+                this.menuClicked = index
+                this.clicked = true
+                console.log(index);
+            } else {
+                this.clicked = false
+                this.activeClass = ""
+            }
 
         }
     },
