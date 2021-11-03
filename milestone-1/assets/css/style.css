@@ -1,17 +1,20 @@
+/***********
+*Commons
+************/
 body{
     background-color: #DBDBD2;
 }
 
+/***********
+*background
+************/
 .back_header{
     height: 100px;
     background-color: #009688;
 }
-
-.container{
-    position: relative;
-    top: -80px;
-}
-
+/**************
+*Debug
+***************/
 .debug .side_window{
     height: 400px;
     background-color: gainsboro;
@@ -21,27 +24,38 @@ body{
     height: 400px;
 }
 
+.debug .content{
+    height: 500px;
+    background-color: gray;
+}
+
+/*********
+*main
+**********/
+.container{
+    position: relative;
+    top: -80px;
+}
+
+/**********
+*side_header
+************/
 .side_header,
 .main_header{
     background-color: #EAEAEA;
     height: 80px;
 }
 
-.debug .content{
-    height: 500px;
-    background-color: gray;
+.side_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .avatar img{
     width: 60px;
     height: 60px;
     border-radius: 50%;
-}
-
-.side_header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .command_my_profile i{
