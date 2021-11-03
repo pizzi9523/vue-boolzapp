@@ -15,6 +15,12 @@ body{
     border-radius: 50%;
 }
 
+.clearfix::after{
+    display: table;
+    content: "";
+    clear: both;
+}
+
 /***********
 *background
 ************/
@@ -160,6 +166,30 @@ body{
     overflow-y: scroll;
 }
 
+.message{
+    position: relative;
+    margin-top: 20px;
+    height: 44px;
+}
+
+.message_sent{
+    position: absolute;
+    right: 0;
+    border-radius: 0.5rem;
+    background-color: #D5F9BA;
+    padding: 10px;
+    margin-right: 40px;
+}
+
+.message_received{
+    position: absolute;
+    left: 0;
+    border-radius: 0.5rem;
+    background-color: white;
+    padding: 10px;
+    margin-left: 40px;
+}
+
 /*main_footer*/
 .main_footer{
     gap: 20px;
@@ -169,14 +199,10 @@ body{
     color: #6B7376;
 }
 
-.message input{
+.write_message input{
     width: 100%;
     height: 50px;
     border: none;
     border-radius: 8px;
     padding: 0 20px;
 }
-
-
-
-
