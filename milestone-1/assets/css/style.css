@@ -73,7 +73,8 @@ body{
 *side_header
 ************/
 .side_header,
-.main_header{
+.main_header,
+.main_footer{
     background-color: #EAEAEA;
     height: 80px;
     display: flex;
@@ -153,6 +154,28 @@ body{
 }
 
 /*main_window*/
+.chat{
+    background-image: url('../img/mine.jpg');
+    height: calc(570px - 160px);
+    overflow-y: scroll;
+}
+
+/*main_footer*/
+.main_footer{
+    gap: 20px;
+}
+
+.main_footer i{
+    color: #6B7376;
+}
+
+.message input{
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 8px;
+    padding: 0 20px;
+}
 
 
 
