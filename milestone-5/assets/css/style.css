@@ -1,0 +1,230 @@
+/***********
+*Commons
+************/
+body{
+    background-color: #DBDBD2;
+}
+
+.bell_icon{
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    color: #8EDAFC;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.clearfix::after{
+    display: table;
+    content: "";
+    clear: both;
+}
+
+/***********
+*background
+************/
+.back_header{
+    height: 100px;
+    background-color: #009688;
+}
+
+/*avatar*/
+.avatar{
+    display: flex;
+    align-items: center;
+}
+
+.avatar img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.avatar .avatar_name{
+    font-weight: 600;
+}
+
+.avatar .avatar_log{
+    font-size: 13px;
+    color: #808080;
+}
+
+/**************
+*Debug
+***************/
+
+
+/*********
+*main
+**********/
+.container{
+    position: relative;
+    top: -80px;
+}
+
+/**********
+*side_header
+************/
+.side_header,
+.main_header,
+.main_footer{
+    background-color: #EAEAEA;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+
+
+
+
+.command i{
+    margin: 0 5px;
+    color: #B1B1B1;
+}
+
+/**********
+*aside
+***********/
+
+/*notification*/
+.notification{
+    background-color: #8EDAFC;
+    padding: 20px 10px; 
+    justify-content: space-evenly;
+    gap: 0.5rem;
+}
+
+.notification_text div{
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.notification_text a{
+    font-size: 0.8rem;
+    color: grey;
+}
+
+/*search_contact*/
+.search_contact{
+    padding: 10px;
+    background-color: #FAFAFA;
+}
+.search_contact input{
+    border: none;
+    width: 100%;
+
+}
+
+.search_contact input:focus-visible{
+    outline: none;
+}
+
+.search_contact input::placeholder{
+    font-size: 15px;
+}
+
+.search{
+    background-color: white;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    line-height: 30px;
+    color: #B1B1B1;
+}
+
+/*contacts*/
+.contacts{
+    background-color: white;
+    overflow-y: scroll;
+    height: 350px;
+}
+
+.contact{
+    border-bottom: 1px solid #FAFAFA;
+    cursor: pointer;
+}
+
+.contact:hover{
+    background-color: #B1B1B1;
+}
+
+/*main_window*/
+.chat{
+    background-image: url('../img/mine.jpg');
+    height: calc(570px - 160px);
+    overflow-y: scroll;
+}
+
+.message{
+    position: relative;
+    margin-top: 30px;
+    height: 44px;
+}
+
+.message_sent{
+    position: absolute;
+    right: 0;
+    border-radius: 0.5rem;
+    background-color: #D5F9BA;
+    padding: 13px;
+    margin-right: 40px;
+}
+
+.message_received{
+    position: absolute;
+    left: 0;
+    border-radius: 0.5rem;
+    background-color: white;
+    padding: 13px;
+    margin-left: 40px;
+}
+
+.message_received:hover .menu_icon,
+.message_sent:hover .menu_icon{
+    display: block;
+    cursor: pointer;
+}
+
+.data_message{
+    font-size: 10px;
+    color: #B1B1B1;
+    text-align: end;
+}
+
+.menu_icon{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 10px;
+    display: none;
+}
+
+.message_menu{
+    position: absolute;
+    top: 50%;
+    background-color: white;
+    width: 250px;
+    z-index: 1;
+    display:  none;
+}
+
+/*main_footer*/
+.main_footer{
+    gap: 20px;
+}
+
+.main_footer i{
+    color: #6B7376;
+}
+
+.write_message input{
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 8px;
+    padding: 0 20px;
+}
