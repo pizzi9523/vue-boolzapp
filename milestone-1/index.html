@@ -23,13 +23,18 @@
             <div class="row">
                 <aside class="side_window col-4 px-0">
                     <div class="side_header">
-                        <div class="ms-3 avatar my_profile">
-                            <img src="./assets/img/avatar_io.jpg" alt="">
-                            <span>Nome Utente</span>
+                        <div class=" avatar my_profile">
+                            <div class="avatar_img">
+                                <img src="./assets/img/avatar_io.jpg" alt="">
+                            </div>
+
+                            <div class="avatar_info">
+                                <div class="avatar_name">Nome Utente</div>
+                            </div>
                         </div>
                         <!-- /.my_profile  -->
 
-                        <div class="command_my_profile">
+                        <div class="command">
                             <i class="fas fa-circle-notch"></i>
                             <i class="fas fa-comment-alt "></i>
                             <i class="fas fa-ellipsis-v "></i>
@@ -55,14 +60,46 @@
                         <input type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
                     <div class="contacts">
+                        <div class="contact p-3 " v-for="contact in contacts">
 
+                            <div class="avatar">
+                                <div class="avatar_img me-4">
+                                    <img :src="'./assets/img/avatar' + contact.avatar + '.jpg'" alt="">
+                                </div>
+
+                                <div class="avatar_info">
+                                    <div class="avatar_name">{{contact.name}}</div>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
 
                 </aside>
                 <!-- /.side_window -->
 
                 <main class="main_window col-8 px-0">
-                    <div class="main_header"></div>
+                    <div class="main_header">
+                        <div class="avatar">
+                            <div class="avatar_img">
+                                <img src="./assets/img/avatar_1.jpg" alt="">
+                            </div>
+
+                            <div class="avatar_info">
+                                <div class="avatar_name">Michele</div>
+                                <div class="avatar_log">Ultimo accesso oggi alle</div>
+                            </div>
+
+                        </div>
+                        <!-- /.my_profile  -->
+
+
+                        <div class="command">
+                            <i class="fa fa-search"></i>
+                            <i class="fa fa-paperclip"></i>
+                            <i class="fas fa-ellipsis-v "></i>
+                        </div>
+                    </div>
                     <div class="content"></div>
                     <div class="main_footer"></div>
                 </main>

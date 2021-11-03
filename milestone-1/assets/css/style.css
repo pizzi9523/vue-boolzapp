@@ -22,6 +22,28 @@ body{
     height: 100px;
     background-color: #009688;
 }
+
+/*avatar*/
+.avatar{
+    display: flex;
+    align-items: center;
+}
+
+.avatar img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.avatar .avatar_name{
+    font-weight: 600;
+}
+
+.avatar .avatar_log{
+    font-size: 13px;
+    color: #808080;
+}
+
 /**************
 *Debug
 ***************/
@@ -54,21 +76,17 @@ body{
 .main_header{
     background-color: #EAEAEA;
     height: 80px;
-}
-
-.side_header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem;
 }
 
-.avatar img{
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-}
 
-.command_my_profile i{
+
+
+
+.command i{
     margin: 0 5px;
     color: #B1B1B1;
 }
@@ -122,6 +140,20 @@ body{
     line-height: 30px;
     color: #B1B1B1;
 }
+
+/*contacts*/
+.contacts{
+    background-color: white;
+    overflow-y: scroll;
+    height: 350px;
+}
+
+.contact{
+    border-bottom: 1px solid #FAFAFA;
+}
+
+/*main_window*/
+
 
 
 
