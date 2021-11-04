@@ -70,15 +70,26 @@
                                     <img :src="'./assets/img/avatar' + contact.avatar + '.jpg'" alt="">
                                 </div>
 
-                                <div class="avatar_info">
-                                    <div class="avatar_name">{{contact.name}}</div>
+                                <div>
+                                    <div class="avatar_info mb-2">
+                                        <div class="avatar_name">{{contact.name}}</div>
+                                    </div>
+
+                                    <div v-if="contact.messages.length > 0" class="text_message by_contact">
+                                        {{contact.messages[contact.messages.length -
+                                        1].text}}
+                                    </div>
                                 </div>
 
 
                                 <div v-if="contact.messages.length > 0" class="data_message by_contact">
                                     {{contact.messages[contact.messages.length -
-                                    1].date}} </div>
+                                    1].date}}
+                                </div>
                             </div>
+
+
+
                         </div>
                     </div>
                     <!-- /.contact  -->
@@ -95,7 +106,7 @@
 
                             <div class="avatar_info">
                                 <div class="avatar_name">{{contacts[pointer].name}}</div>
-                                <div class="avatar_log">Ultimo accesso oggi alle</div>
+                                <div class="avatar_log">Ultimo accesso oggi alle {{currentData}}</div>
                             </div>
 
                         </div>

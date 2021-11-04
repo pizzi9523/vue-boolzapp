@@ -160,13 +160,18 @@ body{
     background-color: #B1B1B1;
 }
 
-.contact:hover .data_message.by_contact{
+.contact:hover .data_message.by_contact,
+.contact:hover .text_message.by_contact{
     color: white;
 }
 
 .data_message.by_contact{
     margin-left: auto;
-    
+}
+
+.text_message.by_contact{
+    font-size: 13px;
+    color: #B1B1B1;
 }
 
 /*main_window*/
