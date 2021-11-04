@@ -82,9 +82,11 @@ body{
 
 
 .command i{
-    margin: 0 5px;
+    margin: 0 10px;
     color: #B1B1B1;
 }
+
+
 
 /**********
 *aside
@@ -116,6 +118,7 @@ body{
 .search_contact input{
     border: none;
     width: 100%;
+    height: 40px;
 
 }
 
@@ -129,10 +132,10 @@ body{
 
 .search{
     background-color: white;
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
     text-align: center;
-    line-height: 30px;
+    line-height: 40px;
     color: #B1B1B1;
 }
 
@@ -140,8 +143,13 @@ body{
 .contacts{
     background-color: white;
     overflow-y: scroll;
-    height: 350px;
+    display: flex;
+    min-height: 200px;
+    max-height: 680px;
+    flex-direction: column;
+    height: calc(100vh - 268px);
 }
+
 
 .contact{
     border-bottom: 1px solid #FAFAFA;
@@ -152,17 +160,30 @@ body{
     background-color: #B1B1B1;
 }
 
+.contact:hover .data_message.by_contact{
+    color: white;
+}
+
+.data_message.by_contact{
+    margin-left: auto;
+    
+}
+
 /*main_window*/
 .chat{
     background-image: url('../img/mine.jpg');
-    height: calc(570px - 160px);
+    height: calc(100vh - 198px);
     overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    min-height: 270px;
+    max-height: 750px;
 }
 
 .message{
     position: relative;
-    margin-top: 30px;
-    height: 44px;
+    margin-top: 20px;
+    min-height: 70px;
 }
 
 .message_sent{
