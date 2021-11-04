@@ -2,7 +2,7 @@ const app = new Vue({
     el: "#root",
 
     data: {
-        currentData: dayjs().format('DD/MM/YYYY H:mm:ss'),
+        lastAccess: dayjs().format('H:mm'),
         menuClicked: "",
         clicked: "false",
         activeClass: "",
