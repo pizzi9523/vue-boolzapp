@@ -102,7 +102,7 @@ const app = new Vue({
                     }
                 ],
             },
-        ]
+        ],
 
     },
 
@@ -110,6 +110,7 @@ const app = new Vue({
         showChat(index) {
             this.pointer = index;
         },
+
         addNewMessage() {
             //console.log(this.newMessage.text);
             let currentData = dayjs().format('DD/MM/YYYY H:mm:ss')
@@ -122,29 +123,33 @@ const app = new Vue({
 
             setTimeout(function () {
                 //console.log(this);
-                app.newMessageReceived.date = currentData
+                let newcurrentData = dayjs().format('DD/MM/YYYY H:mm:ss')
+                app.newMessageReceived.date = newcurrentData
                 app.newMessageReceived.text = "Ok"
 
                 app.contacts[app.pointer].messages.push(app.newMessageReceived)
             }, 1000)
         },
 
-        searchContact() {
-            //console.log(this.searchInput);
-        },
-
         showMenu(index) {
             if (!this.clicked) {
+                this.clicked = true
                 this.activeClass = "active"
                 this.menuClicked = index
-                this.clicked = true
-                console.log(index);
+                //console.log(index);
             } else {
                 this.clicked = false
                 this.activeClass = ""
             }
 
-        }
+        },
+
+        deleteMessage(index) {
+            this.contacts[this.pointer].messages.splice(index, 1)
+            this.clicked = false;
+            //console.log(index);
+        },
+
     },
 
 })

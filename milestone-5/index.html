@@ -35,9 +35,9 @@
                         <!-- /.my_profile  -->
 
                         <div class="command">
-                            <i class="fas fa-circle-notch "></i>
-                            <i class="fas fa-comment-alt "></i>
-                            <i class="fas fa-ellipsis-v "></i>
+                            <i class="fas fa-circle-notch fa-xl"></i>
+                            <i class="fas fa-comment-alt fa-xl"></i>
+                            <i class="fas fa-ellipsis-v fa-xl"></i>
                         </div>
                         <!-- /.command_my_profile -->
 
@@ -50,7 +50,7 @@
                         </div>
                         <div class="notification_text w-75 ">
                             <div>Ricevi notifiche di nuovi messaggi</div>
-                            <a href="">Attiva Notifiche Desktop</a>
+                            <a href="#">Attiva Notifiche Desktop</a>
                         </div>
                     </div>
                     <!-- /.notification -->
@@ -58,11 +58,10 @@
                         <div class="search">
                             <i class="fa fa-search"></i>
                         </div>
-                        <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchInput"
-                            @keyup="searchContact">
+                        <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchInput" @keyup="">
                     </div>
                     <!-- /.search_contact -->
-                    <div class="contacts ">
+                    <div class="contacts">
                         <div class="contact p-3 " v-for="(contact, index) in contacts" @click="showChat(index)"
                             v-if="contact.name.toLowerCase().includes(searchInput)">
 
@@ -75,6 +74,8 @@
                                     <div class="avatar_name">{{contact.name}}</div>
                                 </div>
 
+                                <div class="data_message by_contact">{{contact.messages[contact.messages.length -
+                                    1].date}} </div>
                             </div>
                         </div>
                     </div>
@@ -100,38 +101,41 @@
 
 
                         <div class="command">
-                            <i class="fa fa-search"></i>
-                            <i class="fa fa-paperclip"></i>
-                            <i class="fas fa-ellipsis-v "></i>
+                            <i class="fa fa-search fa-xl"></i>
+                            <i class="fa fa-paperclip fa-xl"></i>
+                            <i class="fas fa-ellipsis-v fa-xl"></i>
                         </div>
                     </div>
                     <!-- /.main_header  -->
 
                     <div class="chat">
-                        <div>
-                            <div class="message" v-for="(message,index) in contacts[pointer].messages">
-                                <div :class="'message_' + message.status">
-                                    <div @click="showMenu(index)" class="menu_icon"><i class="fas fa-angle-down"></i>
-                                    </div>
-                                    <div class="message_text">{{message.text}}</div>
-                                    <div class="data_message">{{message.date}}</div>
 
-                                    <div v-if="menuClicked == index" :class="activeClass" class="message_menu">
-                                        <div v-if="message.status == 'sent'" class="right">
-                                            <div class="delete_message">Delete</div>
-                                            <div class="info_message"> Info del messaggio</div>
-                                        </div>
-                                        <div v-else class="left">
-                                            <div class="delete_message">Delete</div>
-                                            <div class="info_message"> Info del messaggio</div>
+                        <div class="message" v-for="(message,index) in contacts[pointer].messages">
+                            <div :class="'message_' + message.status">
+                                <div @click="showMenu(index)" class="menu_icon"><i class="fas fa-angle-down"></i>
+                                </div>
+                                <div class="message_text">{{message.text}}</div>
+                                <div class="data_message">{{message.date}}</div>
+
+                                <div v-if="menuClicked == index && clicked == true" :class="activeClass"
+                                    class="message_menu">
+                                    <div v-if="message.status == 'sent'" class="right">
+                                        <div class="info_message"> Message Info</div>
+                                        <div @click="deleteMessage(index)" class="delete_message">Delete Message
                                         </div>
                                     </div>
-
-
+                                    <div v-else class="left">
+                                        <div class="info_message"> Message Info</div>
+                                        <div @click="deleteMessage(index)" class="delete_message">Delete Message
+                                        </div>
+                                    </div>
                                 </div>
 
+
                             </div>
+
                         </div>
+
 
 
                     </div>
