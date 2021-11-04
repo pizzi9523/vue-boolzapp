@@ -63,7 +63,7 @@
                     <!-- /.search_contact -->
                     <div class="contacts">
                         <div class="contact p-3 " v-for="(contact, index) in contacts" @click="showChat(index)"
-                            v-if="contact.name.toLowerCase().includes(searchInput)">
+                            v-if="contact.name.toLowerCase().includes(searchInput.toLowerCase())">
 
                             <div class="avatar ">
                                 <div class="avatar_img me-4">
@@ -137,6 +137,7 @@
                             </div>
 
                         </div>
+                        <!-- /.message  -->
 
 
 
