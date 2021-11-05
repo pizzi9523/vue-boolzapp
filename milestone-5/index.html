@@ -82,8 +82,14 @@
                                             <i class="fa fa-check fa-lg"></i>
                                             <i class="fa fa-check fa-lg"></i>
                                         </span>
-                                        {{contact.messages[contact.messages.length -
-                                        1].text}}
+
+                                        <div v-if="contact.messages[contact.messages.length - 1].text.length > 30">
+                                            {{contact.messages[contact.messages.length - 1].text.substr(0,30) + '...'}}
+                                        </div>
+                                        <div v-else>
+                                            {{contact.messages[contact.messages.length - 1].text}}
+                                        </div>
+
                                     </div>
                                 </div>
 
