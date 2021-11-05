@@ -81,10 +81,6 @@ li{
     padding: 1rem;
 }
 
-
-
-
-
 .command i{
     margin: 0 10px;
     color: #B1B1B1;
@@ -164,12 +160,7 @@ i:hover{
 }
 
 .contact:hover{
-    background-color: #B1B1B1;
-}
-
-.contact:hover .data_message.by_contact,
-.contact:hover .text_message.by_contact{
-    color: white;
+    background-color: #EAEAEA;
 }
 
 .data_message.by_contact{
@@ -271,7 +262,7 @@ i:hover{
 
 .message_sent .message_menu div:hover,
 .message_received .message_menu div:hover{
-    background-color: #B1B1B1;
+    background-color: #EAEAEA;
     cursor: pointer;
 }
 
