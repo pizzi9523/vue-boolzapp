@@ -117,6 +117,7 @@ const app = new Vue({
         addNewMessage() {
             //console.log(this.newMessage.text);
             let currentData = dayjs().format('DD/MM/YYYY H:mm:ss')
+            let lastAcces = dayjs().format('H:mm')
             let newMessage = {
                 date: '',
                 text: '',
@@ -125,6 +126,7 @@ const app = new Vue({
             }
             newMessage.date = currentData
             newMessage.text = this.messageText
+            this.lastAccess = lastAcces
             //console.log(this.newMessage);
 
             this.contacts[this.pointer].messages.push(newMessage)

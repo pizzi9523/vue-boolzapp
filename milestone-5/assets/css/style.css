@@ -214,6 +214,7 @@ i:hover{
 .message_sent:hover .menu_icon{
     display: block;
     cursor: pointer;
+    
 }
 
 .data_message{
@@ -238,8 +239,9 @@ i:hover{
 .message_sent .menu_icon{
     right: 10px;
 }
-    
-
+.menu_icon:active{
+    display: block;
+}
 
 .message_menu{
     display: none;
@@ -314,10 +316,6 @@ i:hover{
     color: initial!important;
 }
 
-
-
-
-
 .contact .spunte i{
     margin: 0 -7px;
 }
@@ -329,7 +327,6 @@ i:hover{
 .message .spunte{
     margin-left: 5px;
 }
-
 
 
 .triangolino{
