@@ -76,17 +76,26 @@
                                     </div>
 
                                     <div v-if="contact.messages.length > 0" class="text_message by_contact">
-                                        <span v-if="contact.messages[contact.messages.length -
-                                        1].status == 'sent'" class="spunte" :class="contact.messages[contact.messages.length -
-                                        1].readClass">
-                                            <i class="fa fa-check fa-lg"></i>
-                                            <i class="fa fa-check fa-lg"></i>
-                                        </span>
+
 
                                         <div v-if="contact.messages[contact.messages.length - 1].text.length > 30">
+                                            <span v-if="contact.messages[contact.messages.length -
+                                                                                    1].status == 'sent'" class="spunte"
+                                                :class="contact.messages[contact.messages.length -
+                                                                                    1].readClass">
+                                                <i class="fa fa-check fa-lg"></i>
+                                                <i class="fa fa-check fa-lg"></i>
+                                            </span>
                                             {{contact.messages[contact.messages.length - 1].text.substr(0,30) + '...'}}
                                         </div>
                                         <div v-else>
+                                            <span v-if="contact.messages[contact.messages.length -
+                                                                                    1].status == 'sent'" class="spunte"
+                                                :class="contact.messages[contact.messages.length -
+                                                                                    1].readClass">
+                                                <i class="fa fa-check fa-lg"></i>
+                                                <i class="fa fa-check fa-lg"></i>
+                                            </span>
                                             {{contact.messages[contact.messages.length - 1].text}}
                                         </div>
 
