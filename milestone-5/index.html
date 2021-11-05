@@ -123,8 +123,8 @@
 
                     <div class="chat">
 
-                        <div class="message" v-for="(message,index) in contacts[pointer].messages">
-                            <div :class="'message_' + message.status">
+                        <ul class="message" v-for="(message,index) in contacts[pointer].messages">
+                            <li :class="'message_' + message.status">
                                 <div @click="showMenu(index)" class="menu_icon"><i class="fas fa-angle-down"></i>
                                 </div>
                                 <div class="message_text">{{message.text}}</div>
@@ -132,22 +132,19 @@
 
                                 <div v-if="menuClicked == index && clicked == true" :class="activeClass"
                                     class="message_menu">
-                                    <div v-if="message.status == 'sent'" class="right">
-                                        <div class="info_message"> Message Info</div>
-                                        <div @click="deleteMessage(index)" class="delete_message">Delete Message
-                                        </div>
+
+                                    <div class="info_message">
+                                        Message Info
                                     </div>
-                                    <div v-else class="left">
-                                        <div class="info_message"> Message Info</div>
-                                        <div @click="deleteMessage(index)" class="delete_message">Delete Message
-                                        </div>
+                                    <div @click="deleteMessage(index)" class="delete_message">
+                                        Delete Message
                                     </div>
                                 </div>
 
 
-                            </div>
+                            </li>
 
-                        </div>
+                        </ul>
                         <!-- /.message  -->
 
 
