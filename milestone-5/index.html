@@ -62,7 +62,7 @@
                     </div>
                     <!-- /.search_contact -->
                     <div class="contacts">
-                        <div class="contact p-3 " v-for="(contact, index) in contacts" @click="showChat(index)"
+                        <div class="contact p-3 " v-for="(contact, index) in contacts" @click="pointer = index"
                             v-if="contact.name.toLowerCase().includes(searchInput.toLowerCase())">
 
                             <div class="avatar ">

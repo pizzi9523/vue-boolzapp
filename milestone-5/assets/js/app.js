@@ -3,10 +3,10 @@ const app = new Vue({
 
     data: {
         lastAccess: dayjs().format('H:mm'),
-        menuClicked: "",
-        clicked: "false",
-        activeClass: "",
         pointer: 0,
+        menuClicked: "",
+        clicked: false,
+        activeClass: "",
         messageText: "",
         newMessage: {
             date: '',
@@ -108,9 +108,6 @@ const app = new Vue({
     },
 
     methods: {
-        showChat(index) {
-            this.pointer = index;
-        },
 
         addNewMessage() {
             //console.log(this.newMessage.text);
