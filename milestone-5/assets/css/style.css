@@ -191,7 +191,9 @@ i:hover{
 
 .message_sent{
     align-self: flex-end;
-    border-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
     background-color: #D5F9BA;
     padding: 13px;
     position: relative;
@@ -199,7 +201,9 @@ i:hover{
 
 .message_received{
     align-self: flex-start;
-    border-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
     background-color: white;
     padding: 13px;
     position: relative;
@@ -294,4 +298,51 @@ i:hover{
 
 .main_footer i:hover{
     color: #54aa22;
+}
+
+.message .spunte i{
+    margin: 0 -5px;
+}
+
+.message .spunte.read i,
+.contact .spunte.read i{
+    color: #34b7f1!important;
+}
+
+.message .spunte.read.unread i,
+.contact .spunte.read.unread i{
+    color: initial!important;
+}
+
+
+
+
+
+.contact .spunte i{
+    margin: 0 -7px;
+}
+
+.contact .spunte{
+    margin-right: 5px;
+}
+
+.message .spunte{
+    margin-left: 5px;
+}
+
+
+
+.triangolino{
+    position: absolute;
+    top: -8px;
+}
+
+.message_sent .triangolino{
+    right: -8px;
+    color: #D5F9BA;
+}
+
+.message_received .triangolino{
+    left: -8px;
+    color: white;
 }

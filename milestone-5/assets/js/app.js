@@ -11,12 +11,14 @@ const app = new Vue({
         newMessage: {
             date: '',
             text: '',
-            status: 'sent'
+            status: 'sent',
+            readClass: "unread"
         },
         newMessageReceived: {
             date: '',
             text: '',
-            status: 'received'
+            status: 'received',
+
         },
         searchInput: "",
         contacts: [
@@ -28,12 +30,15 @@ const app = new Vue({
                     {
                         date: '10/01/2020 15:30:55',
                         text: 'Hai portato a spasso il cane?',
-                        status: 'sent'
+                        status: 'sent',
+                        readClass: "read"
+
                     },
                     {
                         date: '10/01/2020 15:50:00',
                         text: 'Ricordati di dargli da mangiare',
-                        status: 'sent'
+                        status: 'sent',
+                        readClass: "read"
                     },
                     {
                         date: '10/01/2020 16:15:22',
@@ -50,7 +55,9 @@ const app = new Vue({
                     {
                         date: '20/03/2020 16:30:00',
                         text: 'Ciao come stai?',
-                        status: 'sent'
+                        status: 'sent',
+                        readClass: "read"
+
                     },
                     {
                         date: '20/03/2020 16:30:55',
@@ -60,7 +67,8 @@ const app = new Vue({
                     {
                         date: '20/03/2020 16:35:00',
                         text: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                        status: 'sent'
+                        status: 'sent',
+                        readClass: "read"
                     }
                 ],
             },
@@ -77,7 +85,8 @@ const app = new Vue({
                     {
                         date: '28/03/2020 10:20:10',
                         text: 'Sicuro di non aver sbagliato chat?',
-                        status: 'sent'
+                        status: 'sent',
+                        readClass: "read"
                     },
                     {
                         date: '28/03/2020 16:15:22',
@@ -94,7 +103,8 @@ const app = new Vue({
                     {
                         date: '10/01/2020 15:30:55',
                         text: 'Lo sai che ha aperto una nuova pizzeria?',
-                        status: 'sent'
+                        status: 'sent',
+                        readClass: "read"
                     },
                     {
                         date: '10/01/2020 15:50:00',
@@ -126,7 +136,11 @@ const app = new Vue({
                 app.newMessageReceived.text = "Ok"
 
                 app.contacts[app.pointer].messages.push(app.newMessageReceived)
-            }, 1000)
+            }, 8000)
+
+            setTimeout(function () {
+                app.newMessage.readClass = "read"
+            }, 5000)
         },
 
         showMenu(index) {

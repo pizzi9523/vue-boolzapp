@@ -76,6 +76,12 @@
                                     </div>
 
                                     <div v-if="contact.messages.length > 0" class="text_message by_contact">
+                                        <span v-if="contact.messages[contact.messages.length -
+                                        1].status == 'sent'" class="spunte" :class="contact.messages[contact.messages.length -
+                                        1].readClass">
+                                            <i class="fa fa-check fa-lg"></i>
+                                            <i class="fa fa-check fa-lg"></i>
+                                        </span>
                                         {{contact.messages[contact.messages.length -
                                         1].text}}
                                     </div>
@@ -125,10 +131,34 @@
 
                         <ul class="message" v-for="(message,index) in contacts[pointer].messages">
                             <li :class="'message_' + message.status">
+                                <span v-if="message.status == 'sent'" class="triangolino">
+                                    <svg viewBox="0 0 8 13" width="8" height="13" class="">
+                                        <path opacity=".13"
+                                            d="M5.188 1H0v11.193l6.467-8.625C7.526 2.156 6.958 1 5.188 1z"></path>
+                                        <path fill="currentColor"
+                                            d="M5.188 0H0v11.193l6.467-8.625C7.526 1.156 6.958 0 5.188 0z"></path>
+                                    </svg>
+                                </span>
+                                <span v-else class="triangolino">
+                                    <svg viewBox="0 0 8 13" width="8" height="13" class="">
+                                        <path opacity=".13" fill="#0000000"
+                                            d="M1.533 3.568L8 12.193V1H2.812C1.042 1 .474 2.156 1.533 3.568z"></path>
+                                        <path fill="currentColor"
+                                            d="M1.533 2.568L8 11.193V0H2.812C1.042 0 .474 1.156 1.533 2.568z"></path>
+                                    </svg>
+                                </span>
                                 <div @click="showMenu(index)" class="menu_icon"><i class="fas fa-angle-down"></i>
                                 </div>
+
                                 <div class="message_text">{{message.text}}</div>
-                                <div class="data_message">{{message.date}}</div>
+                                <div class="data_message">{{message.date}}
+                                    <span v-if="message.status == 'sent'" class="spunte" :class="message.readClass">
+                                        <i class="fa fa-check fa-lg"></i>
+                                        <i class="fa fa-check fa-lg"></i>
+                                    </span>
+
+                                </div>
+
 
                                 <div v-if="menuClicked == index && clicked == true" :class="activeClass"
                                     class="message_menu">
