@@ -8,12 +8,7 @@ const app = new Vue({
         clicked: false,
         activeClass: "",
         messageText: "",
-        newMessage: {
-            date: '',
-            text: '',
-            status: 'sent',
-            readClass: "unread"
-        },
+
         newMessageReceived: {
             date: '',
             text: '',
@@ -122,12 +117,22 @@ const app = new Vue({
         addNewMessage() {
             //console.log(this.newMessage.text);
             let currentData = dayjs().format('DD/MM/YYYY H:mm:ss')
-            this.newMessage.date = currentData
-            this.newMessage.text = this.messageText
+            let newMessage = {
+                date: '',
+                text: '',
+                status: 'sent',
+                readClass: "unread"
+            }
+            newMessage.date = currentData
+            newMessage.text = this.messageText
             //console.log(this.newMessage);
 
-            this.contacts[this.pointer].messages.push(this.newMessage)
+            this.contacts[this.pointer].messages.push(newMessage)
             this.messageText = ""
+
+            setTimeout(function () {
+                app.contacts[app.pointer].messages[app.contacts[app.pointer].messages.length - 1].readClass = "read"
+            }, 2000)
 
             setTimeout(function () {
                 //console.log(this);
@@ -136,11 +141,9 @@ const app = new Vue({
                 app.newMessageReceived.text = "Ok"
 
                 app.contacts[app.pointer].messages.push(app.newMessageReceived)
-            }, 8000)
+            }, 4000)
 
-            setTimeout(function () {
-                app.newMessage.readClass = "read"
-            }, 5000)
+
         },
 
         showMenu(index) {
