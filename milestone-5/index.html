@@ -74,7 +74,10 @@
                                     <div class="avatar_info mb-2">
                                         <div class="avatar_name">{{contact.name}}</div>
                                     </div>
-
+                                    <span v-if="contact.messages[contact.messages.length - 1].vocal"
+                                        class="text_message by_contact">
+                                        <i class="fas fa-music mx-2"></i> Messaggio Vocale
+                                    </span>
                                     <div v-if="contact.messages.length > 0" class="text_message by_contact">
 
 
@@ -90,7 +93,8 @@
                                         </div>
                                         <div v-else>
                                             <span v-if="contact.messages[contact.messages.length -
-                                                                                    1].status == 'sent'" class="spunte"
+                                                                                    1].status == 'sent' && contact.messages[contact.messages.length -
+                                                                                    1].text.length > 0 " class="spunte"
                                                 :class="contact.messages[contact.messages.length -
                                                                                     1].readClass">
                                                 <i class="fa fa-check fa-lg"></i>
