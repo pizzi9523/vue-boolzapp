@@ -8,6 +8,7 @@ const app = new Vue({
         clicked: false,
         activeClass: "",
         messageText: "",
+        vocalClicked: false,
 
         newMessageReceived: {
             date: '',
@@ -166,6 +167,48 @@ const app = new Vue({
             this.clicked = false;
             //console.log(index);
         },
+
+        vocalMessage() {
+
+            navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
+                const mediaRecorder = new MediaRecorder(stream)
+                mediaRecorder.start()
+                const audioChunks = [];
+                mediaRecorder.addEventListener("dataavailable", event => {
+                    audioChunks.push(event.data);
+                });
+
+                mediaRecorder.addEventListener("stop", () => {
+                    const audioBlob = new Blob(audioChunks);
+                    const audioUrl = URL.createObjectURL(audioBlob);
+                    let newMessage = {
+                        date: '',
+                        text: '',
+                        status: 'sent',
+                        readClass: "unread",
+                        vocal: audioUrl
+                    }
+
+                    this.contacts[this.pointer].messages.push(newMessage)
+
+                    // console.log(newMessage);
+                    // console.log(audioUrl);
+
+                    // const audio = `<audio controls preload="auto" src="${audioUrl}"></audio>`
+                    // document.querySelector(".chat").insertAdjacentHTML("beforeend", `<li class="message_sent"><div class="message_text">${audio}</div></li>`)
+
+                });
+
+                setTimeout(() => {
+                    mediaRecorder.stop();
+                }, 4 * 1000);
+
+            })
+
+
+        },
+
+
 
     },
 

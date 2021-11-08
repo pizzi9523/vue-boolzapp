@@ -165,7 +165,11 @@
                                 <div @click="showMenu(index)" class="menu_icon"><i class="fas fa-angle-down"></i>
                                 </div>
 
+                                <div v-if="message.vocal">
+                                    <audio controls preload="auto" :src="message.vocal"></audio>
+                                </div>
                                 <div class="message_text">{{message.text}}</div>
+
                                 <div class="data_message">{{message.date}}
                                     <span v-if="message.status == 'sent'" class="spunte" :class="message.readClass">
                                         <i class="fa fa-check fa-lg"></i>
@@ -205,7 +209,7 @@
                             <input type="text" placeholder="Scrivi un messaggio" v-model="messageText"
                                 @keyup.enter="addNewMessage()">
                         </div>
-                        <div class="vocal_message flex--grow-0">
+                        <div class="vocal_message flex--grow-0" @click="vocalMessage">
                             <i class="fa fa-microphone fa-2x" aria-hidden="true"></i>
                         </div>
 
